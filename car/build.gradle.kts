@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.carmobileapp.car"
+    namespace = "com.radiogarden.car"
     compileSdk = 34
 
     defaultConfig {

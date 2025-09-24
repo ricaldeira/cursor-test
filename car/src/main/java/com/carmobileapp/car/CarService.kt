@@ -1,4 +1,4 @@
-package com.carmobileapp.car
+package com.radiogarden.car
 
 import androidx.car.app.CarAppService
 import androidx.car.app.Session

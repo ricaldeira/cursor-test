@@ -22,9 +22,9 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = CarBlue,
-    secondary = CarBlueLight,
-    tertiary = CarAccent
+    primary = RadioGreen,
+    secondary = RadioGreenLight,
+    tertiary = RadioAccent
 )
 
 @Composable

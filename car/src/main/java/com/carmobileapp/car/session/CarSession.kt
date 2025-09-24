@@ -1,9 +1,9 @@
-package com.carmobileapp.car.session
+package com.radiogarden.car.session
 
 import androidx.car.app.Session
 import androidx.car.app.Screen
-import com.carmobileapp.car.presentation.CarHomeScreen
-import com.carmobileapp.car.presentation.CarHomeScreenFactory
+import com.radiogarden.car.presentation.CarHomeScreen
+import com.radiogarden.car.presentation.CarHomeScreenFactory
 
 class CarSession : Session() {
     

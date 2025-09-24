@@ -1,4 +1,4 @@
-package com.carmobileapp
+package com.radiogarden
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,14 +15,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.carmobileapp.ui.theme.CarMobileAppTheme
+import com.radiogarden.ui.theme.RadioGardenTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CarMobileAppTheme {
+            RadioGardenTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(
                         modifier = Modifier
@@ -33,12 +33,12 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Car Mobile App",
+                            text = "Radio Garden",
                             style = MaterialTheme.typography.headlineLarge,
                             textAlign = TextAlign.Center
                         )
                         Text(
-                            text = "This app is designed for Android Auto/Car App integration",
+                            text = "Listen to radio stations from around the world",
                             style = MaterialTheme.typography.bodyLarge,
                             textAlign = TextAlign.Center,
                             modifier = Modifier.padding(top = 16.dp)

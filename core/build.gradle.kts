@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.carmobileapp.core"
+    namespace = "com.radiogarden.core"
     compileSdk = 34
 
     defaultConfig {
@@ -61,6 +61,10 @@ dependencies {
     
     // DataStore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+    
+    // Audio Streaming
+    implementation("androidx.media3:media3-exoplayer:1.2.0")
+    implementation("androidx.media3:media3-session:1.2.0")
     
     // Testing
     testImplementation("junit:junit:4.13.2")

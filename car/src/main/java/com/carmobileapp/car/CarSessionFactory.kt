@@ -1,7 +1,7 @@
-package com.carmobileapp.car
+package com.radiogarden.car
 
 import androidx.car.app.Session
-import com.carmobileapp.car.session.CarSession
+import com.radiogarden.car.session.CarSession
 
 class CarSessionFactory {
     fun create(): Session {

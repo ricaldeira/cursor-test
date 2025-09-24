@@ -1,119 +1,179 @@
-# Car Mobile App
+# Radio Garden - Android App
 
-A comprehensive Android application that provides both mobile and car interfaces for vehicle management and navigation.
-
-## Project Structure
-
-This project follows a modular architecture with the following modules:
-
-### Core Module (`:core`)
-Contains shared business logic, domain models, and repository interfaces:
-- **Domain Models**: User, Vehicle, Location, Route, NavigationSession
-- **Repository Interfaces**: UserRepository, VehicleRepository, NavigationRepository
-- **Repository Implementations**: Mock implementations for development
-- **Dependency Injection**: Hilt modules for repository bindings
-
-### Mobile Module (`:mobile`)
-Standard Android mobile interface using Jetpack Compose:
-- **Navigation**: Mobile-specific navigation with bottom navigation
-- **Screens**: Home, Navigation, Vehicles, Profile
-- **ViewModels**: MVVM architecture with Hilt dependency injection
-- **UI Components**: Material 3 design system
-
-### Car Module (`:car`)
-Android Auto integration for in-car experience:
-- **Car Service**: Android Auto service implementation
-- **Car Screens**: Grid-based interface optimized for car displays
-- **Navigation**: Car-specific navigation templates
-- **Session Management**: Car session handling
-
-### App Module (`:app`)
-Main application module that ties everything together:
-- **Application Class**: Hilt-enabled application
-- **Main Activity**: Entry point for mobile interface
-- **Manifest**: Permissions and service declarations
-- **Theme**: Material 3 theming
+A modern Android application that allows users to listen to radio stations from around the world, inspired by [Radio Garden](https://radio.garden/). The app provides both mobile and Android Auto support for a seamless listening experience.
 
 ## Features
 
-### Mobile Interface
-- **Home Screen**: Quick access to main features
-- **Navigation**: Search destinations and start navigation
-- **Vehicle Management**: Add, edit, and manage vehicles
-- **Profile**: User settings and preferences
+### 🌍 Global Radio Streaming
+- Listen to radio stations from countries worldwide
+- High-quality audio streaming with ExoPlayer
+- Support for multiple audio formats (MP3, AAC, etc.)
 
-### Car Interface (Android Auto)
-- **Grid Layout**: Touch-friendly interface for car displays
-- **Navigation**: Car-optimized navigation experience
-- **Quick Actions**: Voice commands and shortcuts
-- **Safety First**: Minimal distractions while driving
+### 📱 Mobile Experience
+- Modern Material Design 3 UI with Jetpack Compose
+- Search functionality to find stations by name, city, or country
+- Favorites system to save preferred stations
+- Recent stations history
+- Tabbed interface for easy navigation
 
-## Technology Stack
+### 🚗 Android Auto Integration
+- Full Android Auto support for safe driving
+- Voice-controlled playback
+- Car-optimized UI with large touch targets
+- Background audio playback
 
-- **Kotlin**: Primary programming language
-- **Jetpack Compose**: Modern UI toolkit
-- **Android Auto**: Car integration framework
-- **Hilt**: Dependency injection
-- **MVVM**: Architecture pattern
-- **Material 3**: Design system
-- **Coroutines**: Asynchronous programming
+### 🎵 Audio Features
+- Play/pause/stop controls
+- Volume control
+- Buffering status indicators
+- Error handling and retry mechanisms
+
+## Architecture
+
+The app follows Clean Architecture principles with the following modules:
+
+- **app**: Main application module with UI and navigation
+- **core**: Shared business logic, data models, and repositories
+- **car**: Android Auto specific implementation
+
+### Tech Stack
+
+- **UI**: Jetpack Compose with Material Design 3
+- **Architecture**: MVVM with ViewModels and StateFlow
+- **Dependency Injection**: Hilt
+- **Audio Streaming**: ExoPlayer (Media3)
+- **Database**: Room for local storage
+- **Networking**: Retrofit for API calls
+- **Navigation**: Navigation Compose
+- **Android Auto**: Car App Library
+
+## Project Structure
+
+```
+app/
+├── src/main/java/com/radiogarden/
+│   ├── MainActivity.kt
+│   ├── RadioGardenApplication.kt
+│   └── ui/
+│       ├── screens/
+│       ├── components/
+│       ├── viewmodel/
+│       └── theme/
+
+core/
+├── src/main/java/com/radiogarden/core/
+│   ├── domain/
+│   │   ├── model/
+│   │   └── usecase/
+│   ├── data/
+│   │   ├── database/
+│   │   ├── repository/
+│   │   └── sample/
+│   ├── audio/
+│   └── di/
+
+car/
+├── src/main/java/com/radiogarden/car/
+│   ├── CarService.kt
+│   ├── presentation/
+│   └── session/
+```
 
 ## Getting Started
 
-1. **Prerequisites**:
-   - Android Studio Hedgehog or later
-   - Android SDK 24+ (Android 7.0)
-   - Kotlin 1.9.20+
+### Prerequisites
 
-2. **Setup**:
-   ```bash
-   git clone <repository-url>
-   cd CarMobileApp
-   ```
+- Android Studio Hedgehog or later
+- Android SDK 24+ (Android 7.0)
+- Kotlin 1.9.20+
 
-3. **Build**:
-   ```bash
-   ./gradlew build
-   ```
+### Installation
 
-4. **Run**:
-   - For mobile: Run the app on an Android device or emulator
-   - For car: Connect to Android Auto compatible head unit
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd radio-garden
+```
 
-## Development
+2. Open the project in Android Studio
 
-### Adding New Features
+3. Sync the project with Gradle files
 
-1. **Domain Layer**: Add models and repository interfaces in `:core`
-2. **Data Layer**: Implement repositories in `:core`
-3. **Presentation Layer**: Add screens and ViewModels in respective modules
-4. **Navigation**: Update navigation graphs
-5. **Testing**: Add unit and UI tests
+4. Run the app on an emulator or device
 
-### Architecture Guidelines
+### Building for Android Auto
 
-- **Single Responsibility**: Each module has a clear purpose
-- **Dependency Inversion**: Depend on abstractions, not implementations
-- **Separation of Concerns**: UI, business logic, and data are separated
-- **Testability**: All components are easily testable
+To test Android Auto functionality:
+
+1. Enable Developer Options on your Android device
+2. Enable "Unknown Sources" for Android Auto
+3. Install the app on your device
+4. Connect to a car or use the Android Auto desktop head unit
+
+## Usage
+
+### Mobile App
+
+1. **Browse Stations**: Use the "All Stations" tab to see available radio stations
+2. **Search**: Tap the search icon to find specific stations
+3. **Play Music**: Tap the play button on any station card
+4. **Favorites**: Tap the heart icon to add stations to favorites
+5. **Recent**: View recently played stations in the "Recent" tab
+
+### Android Auto
+
+1. Connect your phone to your car's Android Auto system
+2. Launch Radio Garden from the Android Auto interface
+3. Use voice commands or touch controls to navigate
+4. Enjoy hands-free radio listening while driving
+
+## Sample Data
+
+The app includes sample radio stations from various countries:
+
+- **BBC Radio 1** (London, UK) - Pop music
+- **France Inter** (Paris, France) - Talk radio
+- **Deutschlandfunk** (Cologne, Germany) - News
+- **NHK World Radio Japan** (Tokyo, Japan) - International news
+- **ABC Classic** (Sydney, Australia) - Classical music
+- **RTP Antena 1** (Lisbon, Portugal) - Pop music
 
 ## Permissions
 
 The app requires the following permissions:
-- `INTERNET`: For API calls and location services
-- `ACCESS_FINE_LOCATION`: For precise location data
-- `ACCESS_COARSE_LOCATION`: For approximate location data
-- `CAR_CONNECTIVITY`: For Android Auto integration
-- `CAR_ACCESSORY`: For vehicle accessory access
+
+- `INTERNET` - For streaming radio content
+- `ACCESS_NETWORK_STATE` - To check network connectivity
+- `ACCESS_FINE_LOCATION` - For location-based station discovery
+- `ACCESS_COARSE_LOCATION` - For approximate location services
+- `CAR_CONNECTIVITY` - For Android Auto functionality
+- `CAR_ACCESSORY` - For car integration features
 
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Inspired by [Radio Garden](https://radio.garden/) - a web-based radio streaming platform
+- Built with modern Android development practices
+- Uses open-source libraries and frameworks
+
+## Roadmap
+
+- [ ] Add map view for visual station discovery
+- [ ] Implement location-based station recommendations
+- [ ] Add station categories and genres
+- [ ] Support for custom station URLs
+- [ ] Offline mode for cached stations
+- [ ] Social features (sharing, ratings)
+- [ ] Chromecast support
+- [ ] Widget for quick access

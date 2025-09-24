@@ -1,4 +1,4 @@
-package com.carmobileapp.car.presentation.navigation
+package com.radiogarden.car.presentation.navigation
 
 import androidx.car.app.CarContext
 import androidx.car.app.Screen

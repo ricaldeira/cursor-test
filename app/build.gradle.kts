@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.carmobileapp"
+    namespace = "com.radiogarden"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.carmobileapp"
+        applicationId = "com.radiogarden"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -71,6 +71,22 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.7.5")
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    
+    // Audio Streaming
+    implementation("androidx.media3:media3-exoplayer:1.2.0")
+    implementation("androidx.media3:media3-ui:1.2.0")
+    implementation("androidx.media3:media3-session:1.2.0")
+    
+    // Maps and Location
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.maps.android:maps-compose:4.3.0")
+    
+    // Image Loading
+    implementation("io.coil-kt:coil-compose:2.5.0")
+    
+    // Permissions
+    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
     
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
