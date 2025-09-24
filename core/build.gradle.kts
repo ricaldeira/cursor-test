@@ -1,8 +1,11 @@
+
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.dagger.hilt.android")
-    id("com.google.devtools.ksp")
+    id("com.android.library") version '8.13.0' apply false
+     d("com.android.application") version "8.13.0" apply false
+    id("com.android.library") version "8.13.0" apply false        
+    id("org.jetbrains.kotlin.android") version "1.9.25" apply false    
+    id("com.google.dagger.hilt.android") version "2.48" apply false
+    id("com.google.devtools.ksp") version "1.9.25" apply false
 }
 
 android {
